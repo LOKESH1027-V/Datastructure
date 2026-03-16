@@ -1,17 +1,16 @@
 import java.util.*;
-public class LinkedList {
+public class MiddleOfLinkedList{
     public static void main(String[] args) {
-        int[]  arr={1,2,3,4,5};
+        int[] arr={1,2,3,5,6};
         Node head=arrayToLinkedList(arr);
-        Node temp=head;
-        head=head.insertInKthPoision(head,6,6);
-        temp=head;
-        while(temp!=null){
-            System.out.println(temp.data);
-            temp=temp.next;
+        Node fast=head;
+        Node slow=head;
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
         }
+        System.out.println(slow.data);
     }
-
 
     public static Node arrayToLinkedList(int[] arr){
         Node head=new Node(arr[0]);
@@ -24,6 +23,4 @@ public class LinkedList {
         }
         return head;
     }
-
-
 }

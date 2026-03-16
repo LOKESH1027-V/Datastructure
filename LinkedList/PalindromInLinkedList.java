@@ -1,17 +1,8 @@
 import java.util.*;
-public class LinkedList {
+public class PalindromInLinkedList {
     public static void main(String[] args) {
-        int[]  arr={1,2,3,4,5};
-        Node head=arrayToLinkedList(arr);
-        Node temp=head;
-        head=head.insertInKthPoision(head,6,6);
-        temp=head;
-        while(temp!=null){
-            System.out.println(temp.data);
-            temp=temp.next;
-        }
+        int[] arr={1,2,3,2,1};
     }
-
 
     public static Node arrayToLinkedList(int[] arr){
         Node head=new Node(arr[0]);
@@ -24,6 +15,4 @@ public class LinkedList {
         }
         return head;
     }
-
-
 }
